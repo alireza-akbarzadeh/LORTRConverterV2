@@ -8,11 +8,31 @@
 import SwiftUI
 
 struct ExchangeRate: View {
+
+    let text: String
+
+    let leftImage: ImageResource
+    let rightImage: ImageResource
+
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+
+        HStack {
+
+            Image(leftImage)
+                .resizable()
+                .scaledToFit().frame(height: 33)
+
+            Text(text)
+
+            Image(rightImage)
+                .resizable()
+                .scaledToFit().frame(height: 33)
+
+        }
     }
 }
 
 #Preview {
-    ExchangeRate()
+    ExchangeRate(
+        text: "1 Silver pices = 4 gold peenies" ,leftImage: .silverpiece, rightImage: .goldpenny)
 }
